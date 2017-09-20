@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
     private static File getOutputMediaFile(int type){
         // To be safe, you should check that the SDCard is mounted
         // using Environment.getExternalStorageState() before doing this.
-
+//测试一下
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory( Environment.DIRECTORY_DCIM), SUB_PATH);
 //        File mediaStorageDir = Environment.getExternalStoragePublicDirectory( Environment.DIRECTORY_DCIM);
         // This location works best if you want the created images to be shared
