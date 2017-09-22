@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyCustomeVView</string>
+    <!-- 合成文件成功提示 ! -->
+    <string name="suc">合成文件成功!</string>
 </resources>

@@ -19,8 +19,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
 
+}
+/**
+android {
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+**/
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -30,6 +41,8 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
     testCompile 'junit:junit:4.12'
     compile 'org.mp4parser:isoparser:1.9.31'
+    // https://mvnrepository.com/artifact/com.googlecode.mp4parser/isoparser
+  // compile group: 'com.googlecode.mp4parser', name: 'isoparser', version: '1.1.21'
     compile 'org.mp4parser:streaming:1.9.31'
     compile 'org.mp4parser:muxer:1.9.31'
 }

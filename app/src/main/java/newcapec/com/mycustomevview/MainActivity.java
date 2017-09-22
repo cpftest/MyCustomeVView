@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(TAG,getOutputMediaFile(MEDIA_TYPE_VIDEO).toString());
         //set outfile
-      //  mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+       //mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         mediaRecorder.setOutputFile(getOutputMediaFile(MEDIA_TYPE_VIDEO).toString());
 
         //set preview out
@@ -258,6 +258,8 @@ public class MainActivity extends AppCompatActivity {
 
         for(File f:dir.listFiles()){
             String file=f.getAbsolutePath();
+            //ParserUtil pu=new ParserUtil();解析视频文件
+            //pu.parseVFile(f);
             Movie movie=MovieCreator.build(file);
             moviesLst.add(movie);
         }
@@ -293,6 +295,7 @@ public class MainActivity extends AppCompatActivity {
         mp4File.writeContainer(fc);
         fc.close();
 
+        Toast.makeText(this, R.string.suc,Toast.LENGTH_LONG);
     }
 
     /**
