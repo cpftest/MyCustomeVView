@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int MEDIA_TYPE_VIDEO=2;
     public static final String TAG="cpf";
     public static final String SUB_PATH="cpf";
+    private static final int  C_DEGREE = 90;
 
     //UI
     private Button btn;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "未找到相机!", Toast.LENGTH_LONG);
         }
         try {
+            camera.setDisplayOrientation(C_DEGREE);//摄像机方向
             camera.setPreviewDisplay(surfaceHolder);
             camera.startPreview();
         } catch (Exception e) {
@@ -168,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
         if(camera==null) {
             Log.d(TAG, " ..............Camera is null!!!!");
             camera=Camera.open(Camera.CameraInfo.CAMERA_FACING_BACK);
+            camera.setDisplayOrientation(C_DEGREE);//设置显示角度  * @param degrees the angle that the picture will be rotated clockwise.
+                                                        //     *                Valid values are 0, 90, 180, and 270.
         }
         camera.unlock();
 
